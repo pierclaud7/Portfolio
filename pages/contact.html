@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Pierclaud BOUKI</title>
+  <link rel="stylesheet" href="../assets/css/contact.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="main-navigation" aria-label="Navigation principale">
+    <div class="site-logo">Pierclaud</div>
+    <ul class="navigation-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="./btssio.html">BTS SIO</a></li>
+      <li><a href="./projets.html">Projets</a></li>
+      <li><a href="./veille.html">Veille Techno</a></li>
+      <li><a href="./contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section Contact -->
+  <main class="contact-section fade-in">
+    <h1 class="title">Me Contacter</h1>
+    <p class="contact-intro">Besoin d’un développeur passionné ou juste envie d’échanger ? Envoie-moi un message !</p>
+
+    <form class="contact-form" method="post" action="#">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Ton nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Ton adresse email" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject" placeholder="Sujet du message" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Ton message ici..." required></textarea>
+      </div>
+
+      <div class="form-group center">
+        <button type="submit" class="btn">Envoyer le message</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <ul class="footer-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="./btssio.html">BTS SIO</a></li>
+        <li><a href="./projets.html">Projets</a></li>
+        <li><a href="./veille.html">Veille Techno</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2025 Pierclaud. Tous droits réservés.</p>
+      <p class="footer-legal"><a href="#">Mentions légales</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
