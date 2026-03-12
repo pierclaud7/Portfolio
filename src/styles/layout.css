@@ -1,0 +1,50 @@
+/* LAYOUT PRINCIPAL */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* CONTENEUR DE SECTION */
+.section {
+  padding:   80px 24px;
+  max-width: 1100px;
+  margin:    0 auto;
+}
+
+/* BADGE TAG */
+.section-tag {
+  display:        inline-block;
+  font-family:    var(--font-body);
+  font-size:      12px;
+  font-weight:    500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color:          var(--accent);
+  background:     var(--glow);
+  padding:        4px 14px;
+  border-radius:  100px;
+  margin-bottom:  16px;
+}
+
+/* TITRE DE SECTION */
+.section-title {
+  font-family:   var(--font-display);
+  font-size:     clamp(2rem, 5vw, 3rem);
+  font-weight:   800;
+  line-height:   1.1;
+  color:         var(--text);
+  margin-bottom: 12px;
+}
+
+/* SOUS-TITRE DE SECTION */
+.section-subtitle {
+  font-size:     1.1rem;
+  color:         var(--text2);
+  max-width:     500px;
+  margin-bottom: 48px;
+}

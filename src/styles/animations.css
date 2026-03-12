@@ -1,0 +1,18 @@
+/* ── TRANSITION DE PAGES ─────────────────────────────────── */
+/* Appliquée lors des changements de route Vue Router */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.page-enter-from { opacity: 0; transform: translateY(12px);  }
+.page-leave-to   { opacity: 0; transform: translateY(-12px); }
+
+/* ── ANIMATION FADE UP ───────────────────────────────────── */
+/* Utilisée sur les éléments du hero avec animation-delay */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}

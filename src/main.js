@@ -2,6 +2,11 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 
+/* IMPORTS DES STYLES */
+import './styles/base.css'
+import './styles/layout.css'
+import './styles/animations.css'
+
 /* IMPORTS DES VUES */
 import Home           from './views/Home.vue'
 import BtsSio         from './views/BtsSio.vue'
