@@ -12,12 +12,12 @@
       <div class="ml-block">
         <h2>Éditeur du site</h2>
         <p>Ce site est édité par <strong>Pierclaud BOUKI</strong>, étudiant en BTS SIO SLAM à Mewo, Metz.</p>
-        <p>Email : <a href="mailto:contact@pierclaud.fr">contact@pierclaud.fr</a></p>
+        <p>Email : <a href="mailto:pierclaudbouki18@gmail.com">pierclaudbouki18@gmail.com</a></p>
       </div>
 
       <div class="ml-block">
         <h2>Hébergement</h2>
-        <p>Ce site est hébergé par <strong>À compléter</strong>.</p>
+        <p>Ce site est hébergé par <strong>Infomaniak Network SA dont le siège social est situé au Rue Eugène Marziano 25 1227 Les Acacias (GE)</strong>.</p>
       </div>
 
       <div class="ml-block">
@@ -27,7 +27,7 @@
 
       <div class="ml-block">
         <h2>Données personnelles</h2>
-        <p>Les données recueillies via le formulaire de contact sont uniquement utilisées pour répondre à vos demandes. Aucune donnée n'est transmise à des tiers. Conformément au RGPD, vous pouvez exercer vos droits à <a href="mailto:contact@pierclaud.fr">contact@pierclaud.fr</a>.</p>
+        <p>Les données recueillies via le formulaire de contact sont uniquement utilisées pour répondre à vos demandes. Aucune donnée n'est transmise à des tiers. Conformément au RGPD, vous pouvez exercer vos droits à <a href="mailto:pierclaudbouki18@gmail.com">pierclaudbouki18@gmail.com</a>.</p>
       </div>
 
       <div class="ml-block last">
