@@ -1,30 +1,35 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import HomeView from './views/HomeView.vue'
-import BtsSioView from './views/BtsSioView.vue'
-import ProjetsView from './views/ProjetsView.vue'
-import VeilleView from './views/VeilleView.vue'
-import ContactView from './views/ContactView.vue'
-import MentionsLegalesView from './views/MentionsLegalesView.vue'
 
+/* IMPORTS DES VUES */
+import Home           from './views/Home.vue'
+import BtsSio         from './views/BtsSio.vue'
+import Projets        from './views/Projets.vue'
+import Veille         from './views/Veille.vue'
+import Contact        from './views/Contact.vue'
+import MentionsLegales from './views/MentionsLegales.vue'
+
+/* DÉFINITION DES ROUTES */
 const routes = [
-  { path: '/',                component: HomeView           },
-  { path: '/bts-sio',         component: BtsSioView         },
-  { path: '/projets',         component: ProjetsView        },
-  { path: '/veille',          component: VeilleView         },
-  { path: '/contact',         component: ContactView        },
-  { path: '/mentions-legales', component: MentionsLegalesView },
+  { path: '/',                component: Home            },
+  { path: '/bts-sio',         component: BtsSio          },
+  { path: '/projets',         component: Projets         },
+  { path: '/veille',          component: Veille          },
+  { path: '/contact',         component: Contact         },
+  { path: '/mentions-legales', component: MentionsLegales },
 ]
 
+/* CRÉATION DU ROUTEUR */
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior() {
     return { top: 0 }
   }
 })
 
+/* CRÉATION DE L'APPLICATION */
 const app = createApp(App)
 app.use(router)
 app.mount('#app')
