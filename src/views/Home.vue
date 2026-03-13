@@ -20,7 +20,7 @@
           Étudiant en <strong>BTS SIO SLAM</strong> <br> Développeur Junior passionné par la création de sites web modernes
         </p>
         <div class="hero-cta fade-up" style="animation-delay:0.4s">
-          <a href="/cv.pdf" target="_blank" class="btn-primary">Mon CV</a>
+          <a href="/public/Pierclaud_CV.pdf" target="_blank" class="btn-primary">Mon CV</a>
           <RouterLink to="/contact" class="btn-ghost">Me contacter</RouterLink>
         </div>
         <div class="hero-socials fade-up" style="animation-delay:0.5s">
@@ -49,14 +49,25 @@
       <div class="parcours-header">
         <h2 class="section-title">Mon parcours</h2>
       </div>
+
+      <!-- Onglets avec icônes SVG -->
       <div class="parcours-tabs">
         <button class="tab-btn" :class="{ active: activeTab === 'exp' }" @click="activeTab = 'exp'">
-          💼 Expériences
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+          Expériences
         </button>
         <button class="tab-btn" :class="{ active: activeTab === 'formation' }" @click="activeTab = 'formation'">
-          🎓 Formations
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          Formations
         </button>
       </div>
+
       <Transition name="tab" mode="out-in">
         <div class="parcours-cards" v-if="activeTab === 'exp'" key="exp">
           <div v-for="exp in experiences" :key="exp.company" class="parcours-card">
@@ -123,121 +134,107 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-<section class="section certif-section">
-  <div class="section-inner">
+    <section class="section certif-section">
+      <div class="section-inner">
 
-    <h2 class="section-title centered">Mes certifications</h2>
-    <p class="certif-subtitle">Certifications obtenues ou en cours dans le cadre de ma formation</p>
+        <h2 class="section-title centered">Mes certifications</h2>
+        <p class="certif-subtitle">Certifications obtenues ou en cours dans le cadre de ma formation</p>
 
-    <div class="certif-list">
+        <div class="certif-list">
 
-      <!-- ── ATELIER RGPD (accordion avec onglets modules) ── -->
-      <div class="certif-row certif-accordion" :class="{ open: rgpdOpen }">
-
-        <!-- Ligne principale cliquable -->
-        <div class="certif-main" @click="rgpdOpen = !rgpdOpen">
-          <div class="certif-logo">
-            <img src="https://www.cnil.fr/sites/cnil/files/thumbnails/image/cnil-logo_rvb.jpg" alt="CNIL" />
-          </div>
-          <div class="certif-info">
-            <span class="certif-name">L'atelier RGPD</span>
-            <span class="certif-source">CNIL</span>
-          </div>
-          <a href="https://atelier-rgpd.cnil.fr" target="_blank" class="certif-btn cours" @click.stop>
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-            Cours
-          </a>
-          <!-- Chevron animé -->
-          <svg class="certif-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </div>
-
-        <!-- Panneau des modules (visible si rgpdOpen) -->
-        <Transition name="accordion">
-          <div class="certif-modules" v-if="rgpdOpen">
-
-            <!-- Onglets modules -->
-            <div class="modules-tabs">
-              <button
-                v-for="(mod, i) in rgpdModules"
-                :key="i"
-                class="module-tab"
-                :class="{ active: activeModule === i }"
-                @click="activeModule = i"
-              >
-                Module {{ i + 1 }}
-              </button>
+          <!-- ATELIER RGPD accordion -->
+          <div class="certif-row certif-accordion" :class="{ open: rgpdOpen }">
+            <div class="certif-main" @click="rgpdOpen = !rgpdOpen">
+              <div class="certif-logo">
+                <img src="https://www.cnil.fr/sites/cnil/files/thumbnails/image/cnil-logo_rvb.jpg" alt="CNIL" />
+              </div>
+              <div class="certif-info">
+                <span class="certif-name">L'atelier RGPD</span>
+                <span class="certif-source">CNIL</span>
+              </div>
+              <a href="https://atelier-rgpd.cnil.fr" target="_blank" class="certif-btn cours" @click.stop>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                Cours
+              </a>
+              <svg class="certif-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
             </div>
 
-            <!-- Contenu du module actif -->
-            <Transition name="tab" mode="out-in">
-              <div class="module-content" :key="activeModule">
-                <div class="module-info">
-                  <span class="module-title">{{ rgpdModules[activeModule].title }}</span>
-                  <span class="certif-status" :class="rgpdModules[activeModule].obtained ? 'obtained' : 'pending'">
-                    {{ rgpdModules[activeModule].obtained ? '✓ Obtenu' : 'En cours' }}
-                  </span>
+            <Transition name="accordion">
+              <div class="certif-modules" v-if="rgpdOpen">
+                <div class="modules-tabs">
+                  <button
+                    v-for="(mod, i) in rgpdModules"
+                    :key="i"
+                    class="module-tab"
+                    :class="{ active: activeModule === i }"
+                    @click="activeModule = i"
+                  >
+                    Module {{ i + 1 }}
+                  </button>
                 </div>
-                <a
-                  v-if="rgpdModules[activeModule].attestation"
-                  :href="rgpdModules[activeModule].attestation"
-                  target="_blank"
-                  class="certif-btn attestation"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                  </svg>
-                  Voir l'attestation
-                </a>
-                <span v-else class="certif-btn disabled">Pas encore obtenu</span>
+                <Transition name="tab" mode="out-in">
+                  <div class="module-content" :key="activeModule">
+                    <div class="module-info">
+                      <span class="module-title">{{ rgpdModules[activeModule].title }}</span>
+                      <span class="certif-status" :class="rgpdModules[activeModule].obtained ? 'obtained' : 'pending'">
+                        {{ rgpdModules[activeModule].obtained ? '✓ Obtenu' : 'En cours' }}
+                      </span>
+                    </div>
+                    <a v-if="rgpdModules[activeModule].attestation" :href="rgpdModules[activeModule].attestation" target="_blank" class="certif-btn attestation">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                      </svg>
+                      Voir l'attestation
+                    </a>
+                    <span v-else class="certif-btn disabled">Pas encore obtenu</span>
+                  </div>
+                </Transition>
               </div>
             </Transition>
-
           </div>
-        </Transition>
-      </div>
 
-      <!-- ── AUTRES CERTIFICATIONS ── -->
-      <div v-for="cert in certifications" :key="cert.name" class="certif-row">
-        <div class="certif-logo">
-          <img :src="cert.logo" :alt="cert.name" />
-        </div>
-        <div class="certif-info">
-          <span class="certif-name">{{ cert.name }}</span>
-          <span class="certif-source">{{ cert.source }}</span>
-        </div>
-        <span class="certif-status" :class="cert.obtained ? 'obtained' : 'pending'">
-          {{ cert.obtained ? '✓ Obtenu' : 'En cours' }}
-        </span>
-        <div class="certif-actions">
-          <a :href="cert.url" target="_blank" class="certif-btn cours">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-            Cours
-          </a>
-          <a v-if="cert.attestation" :href="cert.attestation" target="_blank" class="certif-btn attestation">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-            </svg>
-            Attestation
-          </a>
-          <span v-else class="certif-btn disabled">Pas encore</span>
+          <!-- AUTRES CERTIFICATIONS -->
+          <div v-for="cert in certifications" :key="cert.name" class="certif-row">
+            <div class="certif-logo">
+              <img :src="cert.logo" :alt="cert.name" />
+            </div>
+            <div class="certif-info">
+              <span class="certif-name">{{ cert.name }}</span>
+              <span class="certif-source">{{ cert.source }}</span>
+            </div>
+            <span class="certif-status" :class="cert.obtained ? 'obtained' : 'pending'">
+              {{ cert.obtained ? '✓ Obtenu' : 'En cours' }}
+            </span>
+            <div class="certif-actions">
+              <a :href="cert.url" target="_blank" class="certif-btn cours">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                Cours
+              </a>
+              <a v-if="cert.attestation" :href="cert.attestation" target="_blank" class="certif-btn attestation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                Attestation
+              </a>
+              <span v-else class="certif-btn disabled">Pas encore</span>
+            </div>
+          </div>
+
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
   </div>
 </template>
@@ -265,10 +262,10 @@ const allSkills = [
 
 // ── EXPÉRIENCES ────────────────────────────────────────────
 const experiences = [
-  { date: 'Sept – Nov 2024',   role: 'Stagiaire Développeur',    company: 'My Water Manager, Metz',  tasks: ['Maintenance de l\'application', 'Nouvelles fonctionnalités', 'Travail en équipe'] },
-  { date: 'Depuis juin 2023',  role: 'Employé Polyvalent',       company: 'Piopa, Metz',             tasks: ['Préparation des plats', 'Ouverture du restaurant'] },
-  { date: 'Avril – Août 2022', role: 'Préparateur de commandes', company: 'Amazon, Augny',           tasks: ['Suivi des stocks', '+100 commandes/jour'] },
-  { date: 'Sept – Nov 2021',   role: 'Inventoriste',             company: 'RGIS, Villers-lès-Nancy', tasks: ['Inventaire physique', 'Utilisation de logiciels'] },
+  { date: 'Sept – Nov 2024',   role: 'Stagiaire Développeur',    company: 'My Water Manager, Metz',  tasks: ['Maintenance de l\'application', 'Participation à la mise en place de nouvelles fonctionnalités', 'Collaboration avec l\'équipe de développement pour la conception de nouvelles solutions'] },
+  { date: 'Depuis juin 2023',  role: 'Employé Polyvalent',       company: 'Piopa, Metz',             tasks: ['Aider à la mise en place', 'Participer à la préparation simple des plats', 'Travailler en équipe pour aider le service'] },
+  { date: 'Avril – Août 2022', role: 'Préparateur de commandes', company: 'Amazon, Augny',           tasks: ['Scanner les produits avec un terminal portable', 'Prélever les articles dans les rayons (Picking)', 'Regrouper les produits pour constituer les commandes', 'Emballer les commandes (Packing)'] },
+  { date: 'Sept – Nov 2021',   role: 'Inventoriste',             company: 'RGIS, Villers-lès-Nancy', tasks: ['Scanner les articles à l\'aide d\'un terminal portable', 'Saisir les quantités', 'Transmettre les résultats au responsable d\'équipe','Participer à la clôture de l\'inventaire'] },
 ]
 
 // ── FORMATIONS ─────────────────────────────────────────────
@@ -279,17 +276,16 @@ const formations = [
 ]
 
 // ── ACCORDION RGPD ─────────────────────────────────────────
-const rgpdOpen    = ref(false)
+const rgpdOpen     = ref(false)
 const activeModule = ref(0)
 
-// 6 modules RGPD — attestation: null = pas encore obtenue
 const rgpdModules = [
-  { title: 'Les bases du RGPD',                    obtained: true,  attestation: '/public/attestations/cnil/Attestation_M1.pdf' },
-  { title: 'Les principes de la protection',        obtained: true,  attestation: '/public/attestations/cnil/Attestation_M2.pdf' },
-  { title: 'Les droits des personnes',              obtained: false, attestation: null },
-  { title: 'Les obligations des responsables',      obtained: false, attestation: null },
-  { title: 'La sécurité des données',               obtained: false, attestation: null },
-  { title: 'Les transferts hors Union européenne',  obtained: false, attestation: null },
+  { title: 'Les bases du RGPD',                   obtained: true,  attestation: '/attestations/cnil/Attestation_M1.pdf' },
+  { title: 'Les principes de la protection',       obtained: true,  attestation: '/attestations/cnil/Attestation_M2.pdf' },
+  { title: 'Les droits des personnes',             obtained: false, attestation: null },
+  { title: 'Les obligations des responsables',     obtained: false, attestation: null },
+  { title: 'La sécurité des données',              obtained: false, attestation: null },
+  { title: 'Les transferts hors Union européenne', obtained: false, attestation: null },
 ]
 
 // ── AUTRES CERTIFICATIONS ──────────────────────────────────
@@ -360,12 +356,15 @@ const certifications = [
 .parcours-header { text-align: center; margin-bottom: 40px; }
 .parcours-header .section-title { margin-bottom: 0; }
 .parcours-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 40px; }
-.tab-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--text2); padding: 10px 28px; border-radius: 100px; font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
-.tab-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Onglet avec icône alignée */
+.tab-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--bg2); border: 1px solid var(--border); color: var(--text2); padding: 10px 28px; border-radius: 100px; font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
+.tab-btn:hover  { border-color: var(--accent); color: var(--text); }
 .tab-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 4px 16px var(--glow); }
+
 .tab-enter-active, .tab-leave-active { transition: opacity 0.25s ease, transform 0.25s ease; }
 .tab-enter-from { opacity: 0; transform: translateY(10px); }
-.tab-leave-to { opacity: 0; transform: translateY(-10px); }
+.tab-leave-to   { opacity: 0; transform: translateY(-10px); }
 .parcours-cards { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 600px; margin: 0 auto; }
 .parcours-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all var(--transition); }
 .parcours-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 12px 32px var(--glow); }
@@ -383,7 +382,6 @@ const certifications = [
 .card-tasks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .card-tasks li { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--text2); }
 .task-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-@media (max-width: 600px) { .card-top { flex-direction: column; gap: 8px; } .parcours-tabs { gap: 8px; } .exp-section { padding-left: 16px; padding-right: 16px; } }
 
 /* ── SKILLS ──────────────────────────────────────────────── */
 .skills-section { background: var(--bg); padding-bottom: 60px; }
@@ -407,40 +405,25 @@ const certifications = [
 .certif-section .section-title.centered { text-align: center; margin-bottom: 8px; }
 .certif-subtitle { text-align: center; font-size: 0.95rem; color: var(--text2); margin-bottom: 40px; }
 .certif-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-
-/* Ligne standard */
 .certif-row { display: flex; align-items: center; gap: 16px; padding: 18px 24px; background: var(--bg2); border-bottom: 1px solid var(--border); transition: background var(--transition); }
 .certif-row:last-child { border-bottom: none; }
-
-/* Ligne accordion RGPD */
+.certif-row:not(.certif-accordion):hover { background: var(--bg3); }
 .certif-accordion { flex-direction: column; padding: 0; }
 .certif-main { display: flex; align-items: center; gap: 16px; padding: 18px 24px; width: 100%; cursor: pointer; transition: background var(--transition); }
 .certif-main:hover { background: var(--bg3); }
 .certif-accordion.open .certif-main { background: var(--bg3); }
-
-/* Chevron animé */
 .certif-chevron { color: var(--text2); flex-shrink: 0; transition: transform 0.3s ease; margin-left: auto; }
 .certif-accordion.open .certif-chevron { transform: rotate(180deg); }
-
-/* Panneau modules */
 .certif-modules { width: 100%; border-top: 1px solid var(--border); background: var(--bg); padding: 20px 24px; }
-
-/* Transition accordion */
 .accordion-enter-active, .accordion-leave-active { transition: opacity 0.25s ease, transform 0.25s ease; }
 .accordion-enter-from, .accordion-leave-to { opacity: 0; transform: translateY(-8px); }
-
-/* Onglets modules */
 .modules-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
 .module-tab { background: var(--bg2); border: 1px solid var(--border); color: var(--text2); padding: 6px 14px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all var(--transition); }
 .module-tab:hover { border-color: var(--accent); color: var(--text); }
 .module-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-
-/* Contenu module */
-.module-content { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.module-content { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-height: 40px; }
 .module-info { display: flex; align-items: center; gap: 10px; flex: 1; }
 .module-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: var(--text); }
-
-/* Infos certif */
 .certif-logo { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .certif-logo img { width: 100%; height: 100%; object-fit: contain; }
 .certif-info { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
@@ -449,8 +432,6 @@ const certifications = [
 .certif-status { font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
 .certif-status.obtained { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
 .certif-status.pending  { background: rgba(234, 179, 8, 0.12);  color: #eab308; }
-
-/* Boutons */
 .certif-actions { display: flex; gap: 6px; flex-shrink: 0; }
 .certif-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-decoration: none; white-space: nowrap; transition: all var(--transition); border: 1px solid var(--border); color: var(--text2); background: var(--bg3); cursor: pointer; }
 .certif-btn.cours:hover { border-color: var(--accent); color: var(--accent); }
@@ -470,5 +451,6 @@ const certifications = [
   .parcours-tabs { gap: 8px; }
   .exp-section { padding-left: 16px; padding-right: 16px; }
   .certif-actions { flex-direction: column; }
+  .module-content { flex-direction: column; align-items: flex-start; }
 }
 </style>
