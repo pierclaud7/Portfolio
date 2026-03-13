@@ -20,7 +20,7 @@
           Étudiant en <strong>BTS SIO SLAM</strong> <br> Développeur Junior passionné par la création de sites web modernes
         </p>
         <div class="hero-cta fade-up" style="animation-delay:0.4s">
-          <a href="/public/Pierclaud_CV.pdf" target="_blank" class="btn-primary">Mon CV</a>
+          <a href="/Pierclaud_CV.pdf" target="_blank" class="btn-primary">Mon CV</a>
           <RouterLink to="/contact" class="btn-ghost">Me contacter</RouterLink>
         </div>
         <div class="hero-socials fade-up" style="animation-delay:0.5s">
