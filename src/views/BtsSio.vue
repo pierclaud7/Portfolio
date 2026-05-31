@@ -7,7 +7,7 @@
         <h1 class="page-title">BTS SIO</h1>
         <p class="page-desc">Le BTS SIO <em>(Services Informatiques aux Organisations)</em> est une formation de deux ans permettant de se spécialiser en développement logiciel ou en réseaux informatiques. Je suis la spécialité <strong>SLAM</strong> à Mewo, Metz.</p>
         <div class="hero-cta">
-          <a href="/tableau-de-synthese.pdf" target="_blank" class="btn-primary">
+          <a href="/public/Tableau.pdf" target="_blank" class="btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Tableau de synthèse
           </a>
@@ -61,33 +61,28 @@
       <!-- EPREUVES -->
       <section class="content-section">
         <h2 class="section-title">Les épreuves du BTS SIO</h2>
-        <p class="section-desc">Le BTS SIO comprend 6 épreuves : 5 communes aux deux options et 1 épreuve de spécialité selon votre choix (SISR ou SLAM).</p>
+        <p class="section-desc">Le BTS SIO comprend 7 épreuves dont 5 communes aux deux options et 1 épreuve de spécialité selon votre choix (SISR ou SLAM).</p>
         <div class="epreuves-table">
           <div class="table-header">
+            <span>Code</span>
             <span>Épreuve</span>
-            <span>Intitulé</span>
             <span>Coeff.</span>
             <span>Durée</span>
             <span>Format</span>
           </div>
-          <template v-for="ep in epreuves" :key="ep.title">
-            <div v-if="ep.separator" class="table-separator">
+          <div v-for="ep in epreuves" :key="ep.title"
+            class="table-row"
+            :class="{ highlight: ep.highlight }"
+          >
+            <span class="ep-code">{{ ep.code }}</span>
+            <span class="ep-title-cell">
               {{ ep.title }}
-            </div>
-            <div v-else
-              class="table-row"
-              :class="{ highlight: ep.highlight, facultative: ep.facultative }"
-            >
-              <span class="ep-code">{{ ep.code || '—' }}</span>
-              <span class="ep-title-cell">
-                {{ ep.title }}
-                <span v-if="ep.highlight" class="ep-badge">Ma spécialité</span>
-              </span>
-              <span class="ep-center">{{ ep.coeff ?? '—' }}</span>
-              <span class="ep-muted">{{ ep.duree ?? '—' }}</span>
-              <span class="ep-format">{{ ep.format ?? '—' }}</span>
-            </div>
-          </template>
+              <span v-if="ep.highlight" class="ep-badge">Ma spécialité</span>
+            </span>
+            <span class="ep-center">{{ ep.coeff }}</span>
+            <span class="ep-muted">{{ ep.duree }}</span>
+            <span class="ep-format">{{ ep.format }}</span>
+          </div>
         </div>
       </section>
 
@@ -115,19 +110,14 @@ const debouchesSISR = [
 ]
 
 const epreuves = [
-  { code: '',   title: 'Culture générale et expression',                                    coeff: 2, duree: '4h',                          format: 'Écrit'        },
-  { code: '',   title: 'Expression et communication en langue anglaise',                     coeff: 2, duree: '2h (écrit) + 20min (oral)',   format: 'Écrit et Oral' },
-  { code: '',   title: 'Mathématiques pour l\'informatique',                                 coeff: 3, duree: '55min (public) / 2h (privé)', format: 'Écrit'        },
-  { code: '',   title: 'Mathématiques pour l\'informatique (partie algo)',                   coeff: 3, duree: '20min (uniquement public)',    format: 'Oral'         },
-  { code: '',   title: 'Culture économique, managériale et juridique pour l\'informatique', coeff: 3, duree: '4h',                          format: 'Écrit'        },
-  { code: 'E4', title: 'Support et mise à disposition des services informatiques',          coeff: 4, duree: '40min',                       format: 'Oral'         },
-  { code: 'E5', title: 'Conception et développement d\'applications (SLAM)',                coeff: 4, duree: '40min (1h30 préparation)',     format: 'Oral',  highlight: true },
-  { code: 'E5', title: 'Administration des systèmes et des réseaux (SISR)',                 coeff: 4, duree: '40min (1h30 préparation)',     format: 'Oral'         },
-  { code: 'E6', title: 'Cybersécurité des services informatiques (SISR/SLAM)',              coeff: 4, duree: '4h',                          format: 'Écrit'        },
-  { separator: true, title: 'Épreuves facultatives' },
-  { code: '',   title: 'Langue vivante étrangère 2',             duree: '20min', format: 'Oral',  facultative: true },
-  { code: '',   title: 'Mathématiques approfondies',             duree: '2h',    format: 'Écrit', facultative: true },
-  { code: '',   title: 'Parcours de certification complémentaire', duree: '20min', format: 'Oral', facultative: true },
+  { code: 'E1', title: 'Culture générale et expression',                                    coeff: 2, duree: '3h',                        format: 'Écrit'         },
+  { code: 'E2', title: 'Expression et communication en langue anglaise',                    coeff: 2, duree: '2h (écrit) + 20min (oral)', format: 'Écrit et Oral' },
+  { code: 'E3', title: 'Mathématiques pour l\'informatique',                                coeff: 3, duree: '2h',                        format: 'Écrit'         },
+  { code: 'E4', title: 'Culture économique, managériale et juridique pour l\'informatique', coeff: 3, duree: '4h',                        format: 'Écrit'         },
+  { code: 'E5', title: 'Support et mise à disposition des services informatiques',          coeff: 4, duree: '40min',                     format: 'Oral'          },
+  { code: 'E6', title: 'Conception et développement d\'applications (SLAM)',                coeff: 4, duree: '40min (1h30 préparation)',  format: 'Pratique', highlight: true },
+  { code: 'E6', title: 'Administration des systèmes et des réseaux (SISR)',                 coeff: 4, duree: '40min (1h30 préparation)',  format: 'Pratique'      },
+  { code: 'E7', title: 'Cybersécurité des services informatiques',                          coeff: 4, duree: '4h',                        format: 'Écrit'         },
 ]
 </script>
 
@@ -222,18 +212,6 @@ const epreuves = [
   border-bottom: 1px solid var(--border);
   gap: 8px;
 }
-.table-separator {
-  padding: 10px 20px;
-  background: var(--bg3);
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text2);
-  border-bottom: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-}
 .table-row {
   display: grid;
   grid-template-columns: 60px 1fr 70px 200px 120px;
@@ -248,8 +226,6 @@ const epreuves = [
 .table-row:hover { background: var(--bg3); }
 .table-row.highlight { background: color-mix(in srgb, var(--accent) 5%, var(--bg2)); }
 .table-row.highlight:hover { background: color-mix(in srgb, var(--accent) 8%, var(--bg2)); }
-.table-row.facultative { opacity: 0.6; }
-.table-row.facultative:hover { opacity: 1; }
 .ep-code { font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: var(--accent); }
 .ep-title-cell { font-size: 0.88rem; color: var(--text); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; line-height: 1.4; }
 .ep-center { font-size: 0.88rem; color: var(--text); text-align: center; }
