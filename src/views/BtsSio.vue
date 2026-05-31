@@ -7,7 +7,7 @@
         <h1 class="page-title">BTS SIO</h1>
         <p class="page-desc">Le BTS SIO <em>(Services Informatiques aux Organisations)</em> est une formation de deux ans permettant de se spécialiser en développement logiciel ou en réseaux informatiques. Je suis la spécialité <strong>SLAM</strong> à Mewo, Metz.</p>
         <div class="hero-cta">
-          <a href="/public/Tableau.pdf" target="_blank" class="btn-primary">
+          <a href="./Tableau.pdf" target="_blank" class="btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Tableau de synthèse
           </a>
